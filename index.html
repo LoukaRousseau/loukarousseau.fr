@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louka Rousseau - Portfolio UX/UI & Communication Digitale</title>
+
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">LR</a>
+            <div class="quarter-indicator">
+                <span class="quarter-dot active" data-quarter="1"></span>
+                <span class="quarter-dot" data-quarter="2"></span>
+                <span class="quarter-dot" data-quarter="3"></span>
+                <span class="quarter-dot" data-quarter="4"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Premier Quart-Temps -->
+    <section id="hero" class="section hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="hero-name">Louka Rousseau</span>
+                    <span class="hero-subtitle">UX/UI Designer & Créatif Digital</span>
+                </h1>
+                <p class="hero-tagline">
+                    Transformer chaque projet en victoire créative.<br>
+                    Actuellement en alternance au Vendée Challans Basket.
+                </p>
+                <a href="#projects" class="cta-button">
+                    Découvrir mes projets
+                    <span class="cta-arrow">→</span>
+                </a>
+                <a href="#projects" class="cta-button">
+                    Me contacter <span class="cta-arrow">→</span>
+                </a>
+            </div>
+
+            <!-- SVG Basketball animé -->
+            <div class="basketball-container">
+                <svg class="basketball" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="ballGradient" cx="40%" cy="40%">
+                            <stop offset="0%" style="stop-color:#ff8c42;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#d6622a;stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="90" fill="url(#ballGradient)" />
+                    <circle cx="100" cy="100" r="90" fill="url(#noisePattern)" opacity="0.08" />
+
+                    <pattern id="noisePattern" width="4" height="4" patternUnits="userSpaceOnUse">
+                        <rect width="2" height="2" fill="#000" />
+                    </pattern>
+                    <path d="M 100,10 Q 100,100 100,190" stroke="#1a1a1a" stroke-width="2" fill="none" />
+                    <path d="M 10,100 Q 100,100 190,100" stroke="#1a1a1a" stroke-width="2" fill="none" />
+                    <path d="M 40,30 Q 100,80 160,30" stroke="#1a1a1a" stroke-width="2" fill="none" />
+                    <path d="M 40,170 Q 100,120 160,170" stroke="#1a1a1a" stroke-width="2" fill="none" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- À Propos - Deuxième Quart-Temps -->
+    <section id="about" class="section about" data-quarter="2">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">À propos de moi</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3 class="about-heading">Parcours</h3>
+                    <p>
+                        Étudiant en BUT MMI, passionné par la création numérique et la communication digitale.
+                        Mon approche combine créativité visuelle et stratégie de communication,
+                        avec une attention particulière portée à l'expérience utilisateur.
+                    </p>
+                    <p>
+                        En alternance au <bold>Vendée Challans Basket</bold>, j'ai l'opportunité unique de lier
+                        mes compétences digitales à l'univers du sport professionnel, un domaine
+                        qui m'inspire au quotidien.
+                    </p>
+                </div>
+
+                <div class="about-vision">
+                    <h3 class="about-heading">Vision Créative</h3>
+                    <p>
+                        Je crois en la puissance du design pour raconter des histoires et créer
+                        des connexions émotionnelles. Chaque projet est une opportunité de repousser
+                        les limites de la créativité tout en gardant l'utilisateur au centre.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Années d'expérience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Projets réalisés</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="parcours" class="section timeline-section" data-quarter="2">
+        <div class="timeline-container">
+            <!-- Timeline horizontale -->
+            <div class="timeline-wrapper">
+                <!-- Ligne de progression -->
+                <div class="timeline-line">
+                    <div class="timeline-progress"></div>
+                </div>
+
+                <!-- Points de la timeline -->
+                <div class="timeline-track">
+
+                    <!-- Étape 1 : BAC STI2D -->
+                    <div class="timeline-item" data-index="0">
+                        <div class="timeline-dot">
+                            <div class="dot-inner"></div>
+                            <div class="dot-pulse"></div>
+                        </div>
+                        <div class="timeline-card timeline-card-top">
+                            <div class="card-year">2022</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Bac STI2D</h3>
+                                <p class="card-subtitle">Mention Bien</p>
+                                <p class="card-description">
+                                    Spécialité Systèmes d'Information et Numérique.
+                                    Première approche technique du développement et des systèmes numériques.
+                                </p>
+                                <div class="card-tag">Technique</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Étape 2 : BUT 1 MMI -->
+                    <div class="timeline-item" data-index="1">
+                        <div class="timeline-dot">
+                            <div class="dot-inner"></div>
+                            <div class="dot-pulse"></div>
+                        </div>
+                        <div class="timeline-card timeline-card-bottom">
+                            <div class="card-year">2023</div>
+                            <div class="card-content">
+                                <h3 class="card-title">BUT 1 MMI</h3>
+                                <p class="card-subtitle">Métiers du Multimédia et de l'Internet.</p>
+                                <p class="card-description">Formation en 3 ans mélant développement web, création numérique et communication.</p>
+                                </p>
+                                <div class="card-tags">
+                                    <span class="card-tag">Développement</span>
+                                    <span class="card-tag">Design</span>
+                                    <span class="card-tag">Communication</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Étape 3 : Spécialisation + Alternance -->
+                    <div class="timeline-item" data-index="2">
+                        <div class="timeline-dot">
+                            <div class="dot-inner"></div>
+                            <div class="dot-pulse"></div>
+                        </div>
+                        <div class="timeline-card timeline-card-top timeline-card-active">
+                            <div class="card-year">2024 - 2026</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Parcours Stratégie de Communication - UX/UI design</h3>
+                                <p class="card-subtitle">Alternance au Vendée Challans Basket</p>
+                                <p class="card-description">
+                                    Chargé de communication et de média.
+                                </p>
+                                <div class="card-tags">
+                                    <span class="card-tag card-tag-primary">En cours</span>
+                                    <span class="card-tag">UX/UI</span>
+                                    <span class="card-tag">Alternance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projets - Troisième Quart-Temps -->
+    <section id="projects" class="section projects" data-quarter="3">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Mes projets</h2>
+            </div>
+            <p class="hero-tagline">
+                Explorez mes dernières réalisations.
+            </p>
+            <div class="projects-grid">
+
+                <!-- Projet 1 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span>WEB</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Site Événementiel</h3>
+                        <p class="project-description">
+                            Conception et développement d'un site web événementiel immersif
+                            avec animations avancées et expérience utilisateur optimisée.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Web Design</span>
+                            <span class="tag">Développement</span>
+                            <span class="tag">Animation</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 2 -->
+                <article class="project-card project-card2">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <span>SOCIAL</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Campagne Réseaux Sociaux</h3>
+                        <p class="project-description">
+                            Stratégie et création de contenu pour une campagne digitale sur
+                            les réseaux sociaux, avec forte croissance d'engagement.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Social Media</span>
+                            <span class="tag">Content</span>
+                            <span class="tag">Motion</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences - Quatrième Quart-Temps -->
+    <section id="skills" class="section skills" data-quarter="4">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Compétences</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Design</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">UI/UX Design</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Branding</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Motion Design</span>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Développement</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML/CSS</span>
+                                <span class="skill-level">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">React</span>
+                                <span class="skill-level">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Communication</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Stratégie Digitale</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Content Marketing</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Social Media</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scoreboard subtil -->
+            <div class="scoreboard">
+                <div class="scoreboard-item">
+                    <span class="scoreboard-label">Créativité</span>
+                    <span class="scoreboard-value">100</span>
+                </div>
+                <div class="scoreboard-item">
+                    <span class="scoreboard-label">Passion</span>
+                    <span class="scoreboard-value">100</span>
+                </div>
+                <div class="scoreboard-item">
+                    <span class="scoreboard-label">Engagement</span>
+                    <span class="scoreboard-value">100</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+     SECTION TIMELINE PARCOURS - À intégrer dans ton index.html
+     Remplace ou ajoute cette section dans ton portfolio
+     ======================================== -->
+
+
+
+    <!-- Contact - Prolongations -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Contact</h2>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h3 class="contact-heading">Prêt à marquer ensemble ?</h3>
+                    <p class="contact-description">
+                        À la recherche d'un master en communication et création numérique,
+                        idéalement lié au sport. Discutons de votre projet ou d'une
+                        opportunité d'alternance.
+                    </p>
+                </div>
+
+                <div class="contact-methods">
+                    <a href="mailto:louka.rousseau@exemple.fr" class="contact-button">
+                        <span class="contact-icon">✉</span>
+                        <span>louka.rousseau@exemple.fr</span>
+                    </a>
+                    <a href="https://linkedin.com/in/loukarousseau" class="contact-button" target="_blank">
+                        <span class="contact-icon">in</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="tel:+33612345678" class="contact-button">
+                        <span class="contact-icon">☎</span>
+                        <span>+33 6 12 34 56 78</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Louka Rousseau - Tous droits réservés</p>
+            <p class="footer-tagline">La commmunication, c'est tout un sport</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
