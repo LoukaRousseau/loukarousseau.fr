@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Louka Rousseau - Portfolio UX/UI & Communication Digitale</title>
-
     <!-- Fonts Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +16,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    <script src="projects-date.js"></script>
 </head>
+
+<div id="project-modal" class="project-modal">
+    <button class="modal-close-btn">&times;</button>
+    <div id="modal-content-wrapper"></div>
+</div>
 
 <body>
     <!-- Navigation -->
@@ -168,7 +173,7 @@
                     </div>
 
                     <!-- Étape 2 : BUT 1 MMI -->
-                    <div class="timeline-item" data-index="1">
+                    <div class="timeline-item" data-project-id="site-evenementiel">
                         <div class="timeline-dot">
                             <div class="dot-inner"></div>
                             <div class="dot-pulse"></div>
@@ -232,6 +237,19 @@
 
                 <!-- Projet 1 -->
                 <article class="project-card">
+                    <div class="click-guide">
+                        <div class="ghost-cursor desktop-only">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z" fill="white" stroke="black"/>
+                            </svg>
+                        </div>
+                    
+                        <div class="ghost-tap mobile-only">
+                            <div class="tap-circle"></div>
+                        </div>
+                    
+                        <span class="guide-text" data-desktop="Cliquez pour voir" data-mobile="Touchez pour voir">Cliquez pour voir</span>
+                    </div>
                     <div class="project-image">
                         <div class="project-placeholder">
                             <span>WEB</span>
@@ -454,7 +472,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>

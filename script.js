@@ -1,3 +1,5 @@
+import { PROJECTS_DATA } from './project-date.js';
+
 /* ========================================
    PORTFOLIO INTERACTIF - LOUKA ROUSSEAU
    JavaScript pour animations et interactions
@@ -625,6 +627,308 @@ window.addEventListener('scroll', () => {
     }
     
 })();
+
+
+/* ========================================
+   SYSTÈME DE MODALE AVEC EFFET VAGUE
+   À ajouter à la fin de ton script.js
+   ======================================== */
+
+// ========================================
+// VARIABLES GLOBALES MODALE
+// ========================================
+let currentProjectId = null;
+let clickX = 0;
+let clickY = 0;
+
+// ========================================
+// INITIALISATION MODALE
+// ========================================
+function initProjectModals() {
+    const projectCards = document.querySelectorAll('.project-card');
+    const modal = document.querySelector('.project-modal');
+    const closeBtn = document.querySelector('.modal-close-btn');
+    
+    if (!modal || !closeBtn) {
+        console.warn('Modale non trouvée dans le DOM');
+        return;
+    }
+    
+    // Attacher les événements de clic sur chaque carte
+    projectCards.forEach((card, index) => {
+        card.addEventListener('click', (e) => {
+            // Récupérer l'ID du projet ou utiliser l'index
+            const projectId = card.dataset.projectId || PROJECTS_DATA[index]?.id;
+            
+            if (projectId) {
+                openProjectModal(projectId, e);
+            }
+        });
+        
+        // Ajouter l'attribut data-project-id s'il n'existe pas
+        if (!card.dataset.projectId && PROJECTS_DATA[index]) {
+            card.dataset.projectId = PROJECTS_DATA[index].id;
+        }
+    });
+    
+    // Event fermeture
+    closeBtn.addEventListener('click', closeProjectModal);
+    
+    // Fermeture au clic sur l'overlay (optionnel)
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeProjectModal();
+        }
+    });
+    
+    // Fermeture avec Échap
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('opening')) {
+            closeProjectModal();
+        }
+    });
+}
+
+// ========================================
+// OUVERTURE MODALE AVEC EFFET VAGUE
+// ========================================
+function openProjectModal(projectId, event) {
+    const modal = document.querySelector('.project-modal');
+    const project = PROJECTS_DATA.find(p => p.id === projectId);
+    
+    if (!project || !modal) return;
+    
+    currentProjectId = projectId;
+    
+    // Récupérer les coordonnées du clic
+    clickX = event.clientX;
+    clickY = event.clientY;
+    
+    // Convertir en pourcentage pour clip-path
+    const clickXPercent = (clickX / window.innerWidth) * 100;
+    const clickYPercent = (clickY / window.innerHeight) * 100;
+    
+    // Bloquer le scroll
+    document.body.classList.add('modal-open');
+    
+    // Générer le contenu
+    renderModalContent(project);
+    
+    // Appliquer le point d'origine de la vague
+    modal.style.clipPath = `circle(0% at ${clickXPercent}% ${clickYPercent}%)`;
+    
+    // Forcer un reflow pour que l'animation fonctionne
+    modal.offsetHeight;
+    
+    // Ouvrir avec animation
+    modal.classList.add('opening');
+    modal.style.clipPath = `circle(150% at ${clickXPercent}% ${clickYPercent}%)`;
+    modal.style.transition = 'clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1)';
+}
+
+// Précharge les images au survol de la carte
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        const id = card.getAttribute('data-project-id');
+        const project = PROJECTS_DATA.find(p => p.id === id);
+        if (project && project.content) {
+            project.content.forEach(item => {
+                if (item.type === 'big-image' || item.type === 'gallery') {
+                    const img = new Image();
+                    img.src = item.src || (item.images && item.images[0].src);
+                }
+            });
+        }
+    });
+});
+
+// ========================================
+// FERMETURE MODALE AVEC EFFET INVERSE
+// ========================================
+function closeProjectModal() {
+    const modal = document.querySelector('.project-modal');
+    
+    if (!modal) return;
+    
+    // Calculer le point de fermeture (centre ou dernier clic)
+    const clickXPercent = (clickX / window.innerWidth) * 100;
+    const clickYPercent = (clickY / window.innerHeight) * 100;
+    
+    // Animation de fermeture
+    modal.classList.add('closing');
+    modal.style.clipPath = `circle(0% at ${clickXPercent}% ${clickYPercent}%)`;
+    
+    // Attendre la fin de l'animation
+    setTimeout(() => {
+        modal.classList.remove('opening', 'closing');
+        document.body.classList.remove('modal-open');
+        
+        // Vider le contenu
+        const wrapper = document.getElementById('modal-content-wrapper');
+        if (wrapper) {
+            wrapper.innerHTML = '';
+        }
+        
+        currentProjectId = null;
+    }, 800);
+}
+
+// ========================================
+// GÉNÉRATION DU CONTENU MODALE
+// ========================================
+function renderModalContent(project) {
+    const wrapper = document.getElementById('modal-content-wrapper');
+    
+    if (!wrapper) return;
+    
+    // Construire le HTML
+    let html = `
+        <!-- Header -->
+        <div class="modal-header">
+            <div class="modal-category">${project.category}</div>
+            <h2 class="modal-title">${project.title}</h2>
+            <p class="modal-description">${project.shortDescription}</p>
+            <div class="modal-tags">
+                ${project.tags.map(tag => `<span class="modal-tag">${tag}</span>`).join('')}
+            </div>
+        </div>
+        
+        <!-- Body avec sections -->
+        <div class="modal-body">
+    `;
+    
+    // Générer chaque section selon son type
+    project.content.forEach(section => {
+        html += renderSection(section);
+    });
+    
+    html += '</div>';
+    
+    wrapper.innerHTML = html;
+}
+
+// ========================================
+// RENDU DES DIFFÉRENTES SECTIONS
+// ========================================
+function renderSection(section) {
+    switch(section.type) {
+        case 'text':
+            return renderTextSection(section);
+        case 'stats':
+            return renderStatsSection(section);
+        case 'gallery':
+            return renderGallerySection(section);
+        case 'big-image':
+            return renderBigImageSection(section);
+        default:
+            return '';
+    }
+}
+
+// Section texte
+function renderTextSection(section) {
+    return `
+        <div class="content-section section-text">
+            <h3>${section.title}</h3>
+            <p>${section.text}</p>
+        </div>
+    `;
+}
+
+// Section statistiques
+function renderStatsSection(section) {
+    return `
+        <div class="content-section section-stats">
+            <h3>${section.title}</h3>
+            <div class="stats-grid">
+                ${section.stats.map(stat => `
+                    <div class="stat-item">
+                        <div class="stat-icon">${stat.icon}</div>
+                        <div class="stat-value">${stat.value}</div>
+                        <div class="stat-label">${stat.label}</div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
+// Section galerie
+function renderGallerySection(section) {
+    return `
+        <div class="content-section section-gallery">
+            <h3>${section.title}</h3>
+            <div class="gallery-grid">
+                ${section.images.map(img => `
+                    <div class="gallery-item">
+                        <img src="${img.src}" alt="${img.alt}" loading="lazy">
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
+// Section grande image
+function renderBigImageSection(section) {
+    return `
+        <div class="content-section section-big-image">
+            <div class="big-image">
+                <img src="${section.src}" alt="${section.alt}" loading="lazy">
+            </div>
+        </div>
+    `;
+}
+
+// ========================================
+// INITIALISATION AUTO
+// ========================================
+// Ajouter l'initialisation dans ton DOMContentLoaded existant
+// ou appeler directement :
+document.addEventListener('DOMContentLoaded', () => {
+    // Attendre que PROJECTS_DATA soit chargé
+    if (typeof PROJECTS_DATA !== 'undefined') {
+        initProjectModals();
+        console.log('Système de modale initialisé');
+    } else {
+        console.error('PROJECTS_DATA non chargé - vérifier que projects-data.js est inclus');
+    }
+});
+
+/* ========================================
+   UTILITAIRES (OPTIONNELS)
+   ======================================== */
+
+// Fonction pour ouvrir une modale par ID (utilisation programmatique)
+function openModalById(projectId) {
+    const fakeEvent = {
+        clientX: window.innerWidth / 2,
+        clientY: window.innerHeight / 2
+    };
+    openProjectModal(projectId, fakeEvent);
+}
+
+// Fonction pour précharger les images (améliore la performance)
+function preloadProjectImages() {
+    PROJECTS_DATA.forEach(project => {
+        project.content.forEach(section => {
+            if (section.type === 'big-image') {
+                const img = new Image();
+                img.src = section.src;
+            }
+            if (section.type === 'gallery') {
+                section.images.forEach(image => {
+                    const img = new Image();
+                    img.src = image.src;
+                });
+            }
+        });
+    });
+}
+
+// Appeler au chargement pour précharger (optionnel)
+// preloadProjectImages();
+
 
 
 
