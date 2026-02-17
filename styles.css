@@ -978,7 +978,7 @@ body {
     min-height: 100vh;
     background: var(--color-bg);
     overflow: hidden;
-    margin-bottom: 10VH;
+    margin-bottom: 20VH;
 }
 
 .timeline-container {
