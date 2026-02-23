@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initSkillBars();
     initSmoothScroll();
     initProjectCards();
+    initBurgerMenu();
+
 });
 
 // ========================================
@@ -402,11 +404,13 @@ if (window.innerWidth > 1024) {
 // Timeline
 
 const section = document.querySelector('.experience-section');
+
 const progress = document.querySelector('.timeline-progress');
 const cards = document.querySelectorAll('.exp-card');
 
 window.addEventListener('scroll', () => {
-  const rect = section.getBoundingClientRect();
+    if (!section) return; // ← ajoute juste ça
+    const rect = section.getBoundingClientRect();
   const windowHeight = window.innerHeight;
 
   if (rect.top < windowHeight && rect.bottom > 0) {
@@ -464,10 +468,7 @@ window.addEventListener('scroll', () => {
         const progressBar = document.querySelector('.timeline-progress');
         const navButtons = document.querySelectorAll('.timeline-nav-btn');
         
-        if (!section || !items.length) {
-            console.log('Timeline non trouvée');
-            return;
-        }
+
         
         // Animation des cartes au scroll
         animateCards(items);
@@ -478,7 +479,6 @@ window.addEventListener('scroll', () => {
         // Navigation interactive
         setupNavigation(items, navButtons);
         
-        console.log('Timeline initialisée (version simple)');
     }
     
     // ========================================
@@ -889,7 +889,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Attendre que PROJECTS_DATA soit chargé
     if (typeof PROJECTS_DATA !== 'undefined') {
         initProjectModals();
-        console.log('Système de modale initialisé');
     } else {
         console.error('PROJECTS_DATA non chargé - vérifier que projects-data.js est inclus');
     }
@@ -928,6 +927,51 @@ function preloadProjectImages() {
 
 // Appeler au chargement pour précharger (optionnel)
 // preloadProjectImages();
+
+
+// Burger Menu
+function initBurgerMenu() {
+    const burgerBtn  = document.querySelector('.burger-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (!burgerBtn || !mobileMenu) return;
+    const closeBtn = mobileMenu.querySelector('.mobile-menu-close');
+if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    function openMenu() {
+        burgerBtn.classList.add('is-active');
+        burgerBtn.setAttribute('aria-expanded', 'true');
+        mobileMenu.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        burgerBtn.style.zIndex = '9999'; // ← ajoute
+    }
+    
+    function closeMenu() {
+        burgerBtn.classList.remove('is-active');
+        burgerBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+        burgerBtn.style.zIndex = ''; // ← ajoute
+    }
+    
+
+    burgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+
+    // Fermer au clic sur un lien
+    mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Fermer avec Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+    });
+}
+
+// puis appelle la fonction dans ton DOMContentLoaded :
+// initBurgerMenu();
+
 
 
 
