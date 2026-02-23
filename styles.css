@@ -360,7 +360,7 @@ body {
     min-height: 100vh;
     background: var(--color-bg);
     overflow: hidden;
-    margin-bottom: 20vh;
+    padding-bottom: 300px;
 }
 .timeline-section::before {
     content: '';
@@ -1030,7 +1030,7 @@ body.modal-open { overflow: hidden; height: 100vh; }
     .timeline-card  { width: 280px; }
     .card-year      { font-size: 2rem; }
     .card-title     { font-size: 1.5rem; }
-    .timeline-section { padding-top: 60vh; padding-bottom: 60vh; }
+    .timeline-section { padding-top: 80vh; padding-bottom: 70vh; }
     .timeline-container { margin-top: 0; }
 
     /* Modale tablette */
