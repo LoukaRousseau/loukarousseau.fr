@@ -811,9 +811,9 @@ body {
     right: 2rem;
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(21, 0, 249, 0.362);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid #007dff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -829,9 +829,9 @@ body {
 .project-modal.opening .modal-close-btn {
     opacity: 1;
     transform: scale(1);
-    transition: all var(--transition-base) 0.5s;
+    transition: all var(--transition-base) ;
 }
-.modal-close-btn:hover { background: var(--color-accent); border-color: var(--color-accent); transform: scale(1.1) rotate(90deg); }
+.modal-close-btn:hover { background: rgba(21, 0, 249, 0.6); border-color: #007dff; transform: scale(1.1) rotate(90deg); }
 
 #modal-content-wrapper {
     max-width: 1200px;
