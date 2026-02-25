@@ -3,14 +3,14 @@
    Structure externe pour garder le HTML propre
    ======================================== */
 
-   export const PROJECTS_DATA = [
+export const PROJECTS_DATA = [
     {
         id: 'site-evenementiel',
         title: 'Site Événementiel',
         category: 'WEB',
         shortDescription: 'Conception et développement d\'un site web événementiel immersif avec animations avancées et expérience utilisateur optimisée.',
         tags: ['Web Design', 'Développement', 'Animation'],
-        
+
         // Sections de contenu (ordre d'affichage)
         content: [
             {
@@ -54,104 +54,117 @@
             }
         ]
     },
-    
+
     {
-        id: 'campagne-social',
-        title: 'Campagne Réseaux Sociaux',
-        category: 'SOCIAL',
-        shortDescription: 'Stratégie et création de contenu pour une campagne digitale sur les réseaux sociaux, avec forte croissance d\'engagement.',
-        tags: ['Social Media', 'Content', 'Motion'],
-        
+        id: 'chad-communication-360',
+        title: 'CHAD – Stratégie 360° & Refonte Web',
+        category: 'COMMUNICATION',
+        shortDescription: 'Projet de fin d’étude réalisé pour Le Quarante (Conservatoire de Laval) afin de répondre à une baisse d’inscriptions à la Classe à Horaires Aménagés Danse à travers une stratégie de communication 360° et la création d’un site web dédié.',
+        tags: ['Stratégie 360°', 'UX/UI', 'Développement Web', 'Branding', 'Communication'],
+
         content: [
             {
                 type: 'text',
                 title: 'Mission',
-                text: 'Développement d\'une stratégie de communication digitale complète pour le Vendée Challans Basket, incluant la création de contenu photo/vidéo et la gestion quotidienne des réseaux sociaux.'
-            },
-            {
-                type: 'stats',
-                title: 'Impact',
-                stats: [
-                    { label: 'Croissance abonnés', value: '+145%', icon: '📱' },
-                    { label: 'Engagement moyen', value: '8.2%', icon: '❤️' },
-                    { label: 'Portée mensuelle', value: '250K', icon: '👁️' },
-                    { label: 'Contenus créés', value: '120+', icon: '🎬' }
-                ]
+                text: 'Accompagner Le Quarante dans la valorisation de la Classe à Horaires Aménagés Danse (CHAD) face à une baisse d’inscriptions. Concevoir une stratégie de communication globale et développer un site web clair, attractif et orienté conversion pour rassurer les familles et moderniser l’image du dispositif.'
             },
             {
                 type: 'text',
-                title: 'Approche Créative',
-                text: 'Création de formats innovants adaptés à chaque plateforme (Instagram, Facebook, TikTok). Développement d\'une identité visuelle cohérente tout en gardant l\'authenticité du club.'
+                title: 'Problématique',
+                text: 'Manque de visibilité du programme, informations dispersées, image perçue comme institutionnelle et peu engageante pour les collégiens et leurs parents.'
+            },
+            {
+                type: 'text',
+                title: 'Approche Stratégique',
+                text: 'Audit de l’existant, benchmark concurrentiel, définition des cibles (élèves / parents), clarification du positionnement et création d’un univers visuel moderne. Mise en place d’un parcours utilisateur optimisé pour faciliter la compréhension et encourager la prise de contact.'
+            },
+            {
+                type: 'stats',
+                title: 'Dispositif 360°',
+                stats: [
+                    { label: 'Audit & Benchmark', value: 'Analyse complète', icon: '🔍' },
+                    { label: 'Stratégie éditoriale', value: 'Plan d’action', icon: '🧠' },
+                    { label: 'Maquettes UX/UI', value: 'Figma', icon: '🎨' },
+                    { label: 'Site développé', value: 'Responsive', icon: '💻' }
+                ]
             },
             {
                 type: 'gallery',
-                title: 'Exemples de Contenus',
+                title: 'Livrables',
                 images: [
-                    { src: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600', alt: 'Post Instagram' },
-                    { src: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600', alt: 'Story' },
-                    { src: 'https://images.unsplash.com/photo-1504309092620-4d0ec726efa4?w=600', alt: 'Carrousel' }
+                    { src: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600', alt: 'Maquette UI' },
+                    { src: 'https://images.unsplash.com/photo-1529336953121-a0ce75aafac3?w=600', alt: 'Identité visuelle' },
+                    { src: 'https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=600', alt: 'Site responsive' }
                 ]
             },
             {
                 type: 'text',
-                title: 'Outils & Process',
-                text: 'Adobe Creative Suite (Premiere Pro, After Effects, Photoshop), Canva Pro, Planification avec Meta Business Suite, Analyse avec Instagram Insights et Facebook Analytics.'
+                title: 'Outils et Processus',
+                text: 'Figma (UX/UI), Adobe Creative Suite (Illustrator, Photoshop), développement web (HTML, CSS, JS / WordPress selon ton stack), méthodologie de projet agile et logique orientée utilisateur.'
             }
         ]
     },
-    
+
     {
         id: 'branding-club',
-        title: 'Identité Visuelle Club',
-        category: 'BRANDING',
-        shortDescription: 'Création d\'une identité visuelle moderne pour un club sportif local, incluant logo, charte graphique et déclinaisons digitales.',
-        tags: ['Branding', 'Print', 'Digital'],
-        
+        title: 'Vendée Challans Basket – Communication & Image de Marque',
+        category: 'SPORT',
+        shortDescription: 'Pilotage de la communication digitale et valorisation de l’image du club en ELITE 2 : stratégie social media, production de contenus et activation communautaire.',
+        tags: ['Social Media', 'Stratégie', 'Photo / Vidéo', 'Branding', 'Sport'],
+
         content: [
             {
                 type: 'text',
-                title: 'Brief Client',
-                text: 'Refonte complète de l\'identité visuelle d\'un club sportif amateur souhaitant moderniser son image tout en conservant son héritage et ses valeurs.'
+                title: 'Contexte',
+                text: 'Alternance au sein du Vendée Challans Basket (ELITE 2) avec pour mission de renforcer la visibilité digitale du club, moderniser son image et dynamiser l’engagement de la communauté locale.'
             },
             {
                 type: 'big-image',
-                src: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200',
-                alt: 'Nouvelle identité visuelle'
+                src: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1200',
+                alt: 'Couverture match basket'
             },
             {
                 type: 'text',
-                title: 'Processus de Création',
-                text: 'Recherche et analyse de la concurrence, ateliers avec les membres du club, développement de plusieurs propositions, tests utilisateurs, et finalisation avec la création d\'une charte graphique complète.'
+                title: 'Missions',
+                text: 'Définition et mise en œuvre de la stratégie social media, création de contenus photo/vidéo (matchs, coulisses, événements), gestion éditoriale des réseaux sociaux et valorisation des partenaires et actions du club (tournois, basket santé, baskin).'
             },
             {
                 type: 'stats',
-                title: 'Livrables',
+                title: 'Actions Clés',
                 stats: [
-                    { label: 'Logos créés', value: '12', icon: '🎨' },
-                    { label: 'Pages charte', value: '45', icon: '📄' },
-                    { label: 'Templates', value: '20+', icon: '📐' },
-                    { label: 'Satisfaction', value: '100%', icon: '⭐' }
+                    { label: 'Captation photos/vidéos, création de contenus Reels/stories, caméraman live', value: 'Couverture de plus de 60 matchs', icon: '🏀' },
+                    { label: 'Augmentation de 30% des impressions sur Instagram et Facebook', value: '+30%', icon: '📈' },
+                    { label: 'Livret d\'accueil, LEDs bord de terrain, vidéo verticale..', value: 'Nouveaux Formats développés', icon: '📱' },
+                    { label: 'Mise en place d\'un planning éditorial, stratégie social média, reporting dfe performance et analyse statistiques', value: 'Organisation stratégique', icon: '🎯' }
                 ]
             },
             {
                 type: 'gallery',
                 title: 'Applications',
                 images: [
-                    { src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600', alt: 'Cartes de visite' },
-                    { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600', alt: 'Merchandising' },
-                    { src: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600', alt: 'Signalétique' }
+                    { src: "./PROJET-1/GAME-DAY-AFFICHE.webp", alt: "Exemple post Instagram basket", link: "https://youtube.com" },
+                    { src: "./PROJET-1/PHOTO-JOUEUR.webp", alt: "Exemple de série de photo", link: "https://lien-vers-realisation2.com" },
+                    { src: "./PROJET-1/LIVRET-ACCUEIL.webp", alt: "Exemple de livret d'accueil support PRINT", link: "https://lien-vers-realisation3.com" },
+                    { src: "./PROJET-1/VIDEO-CDF.webp", alt: "Exemple de vidéo format horizontal", link: "https://lien-vers-realisation4.com" },
+                    { src: "./PROJET-1/LIVRET-PARTENAIRE.webp", alt: "Exemple de plaquette partenaire support PRINT", link: "https://lien-vers-realisation5.com" },
+                    { src: "./PROJET-1/MONTAGE.webp", alt: "Exemple de montage", link: "https://lien-vers-realisation6.com" },
                 ]
+            },
+            {
+                type: 'text',
+                title: 'Outils et Processus',
+                text: 'DaVinci Resolve (montage vidéo), photographie sportive, Canva & Adobe Suite, planification éditoriale, analyse des performances et adaptation des formats selon les résultats.'
             }
         ]
     },
-    
+
     {
         id: 'app-mobile',
         title: 'Refonte Application Mobile',
         category: 'UX/UI',
         shortDescription: 'Redesign complet d\'une application de suivi sportif avec focus sur l\'expérience utilisateur et l\'accessibilité.',
         tags: ['UX Research', 'UI Design', 'Prototype'],
-        
+
         content: [
             {
                 type: 'text',

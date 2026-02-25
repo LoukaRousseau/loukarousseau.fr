@@ -916,10 +916,36 @@ function preloadProjectImages() {
                 img.src = section.src;
             }
             if (section.type === 'gallery') {
+                const gallerySection = document.createElement('div');
+                gallerySection.className = 'modal-section gallery-section';
+                if (section.title) {
+                    gallerySection.innerHTML = `<h3 class="modal-subtitle">${section.title}</h3>`;
+                }
+                
+                const galleryGrid = document.createElement('div');
+                galleryGrid.className = 'modal-gallery-grid';
+                
                 section.images.forEach(image => {
-                    const img = new Image();
-                    img.src = image.src;
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    
+                    const linkUrl = image.link || "#";
+                    
+                    galleryItem.innerHTML = `
+                        <a href="${linkUrl}" target="_blank" class="gallery-link-container">
+                            <div class="gallery-image-wrapper">
+                                <img src="${image.src}" alt="${image.alt}" loading="lazy">
+                                <div class="gallery-overlay">
+                                    <span class="btn-action">Voir la réalisation</span>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                    galleryGrid.appendChild(galleryItem);
                 });
+                
+                gallerySection.appendChild(galleryGrid);
+                contentWrapper.appendChild(gallerySection);
             }
         });
     });
