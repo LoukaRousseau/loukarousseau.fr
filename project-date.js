@@ -142,12 +142,12 @@ export const PROJECTS_DATA = [
                 type: 'gallery',
                 title: 'Applications',
                 images: [
-                    { src: "../PROJET-1/GAME-DAY-AFFICHE.webp", alt: "Exemple post Instagram basket", link: "https://youtube.com" },
-                    { src: "./PROJET-1/PHOTO-JOUEUR.webp", alt: "Exemple de série de photo", link: "https://lien-vers-realisation2.com" },
-                    { src: "./PROJET-1/LIVRET-ACCUEIL.webp", alt: "Exemple de livret d'accueil support PRINT", link: "https://lien-vers-realisation3.com" },
-                    { src: "./PROJET-1/VIDEO-CDF.webp", alt: "Exemple de vidéo format horizontal", link: "https://lien-vers-realisation4.com" },
-                    { src: "./PROJET-1/LIVRET-PARTENAIRE.webp", alt: "Exemple de plaquette partenaire support PRINT", link: "https://lien-vers-realisation5.com" },
-                    { src: "./PROJET-1/MONTAGE.webp", alt: "Exemple de montage", link: "https://lien-vers-realisation6.com" },
+                    { src: "GAME-DAY-AFFICHE.webp", alt: "Exemple post Instagram basket", link: "https://youtube.com" },
+                    { src: "PHOTO-JOUEUR.webp", alt: "Exemple de série de photo", link: "https://lien-vers-realisation2.com" },
+                    { src: "LIVRET-ACCUEIL.webp", alt: "Exemple de livret d'accueil support PRINT", link: "https://lien-vers-realisation3.com" },
+                    { src: "VIDEO-CDF.webp", alt: "Exemple de vidéo format horizontal", link: "https://lien-vers-realisation4.com" },
+                    { src: "LIVRET-PARTENAIRE.webp", alt: "Exemple de plaquette partenaire support PRINT", link: "https://lien-vers-realisation5.com" },
+                    { src: "MONTAGE.webp", alt: "Exemple de montage", link: "https://lien-vers-realisation6.com" },
                 ]
             },
             {
