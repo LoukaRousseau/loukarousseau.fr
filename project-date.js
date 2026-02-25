@@ -191,11 +191,6 @@ export const PROJECTS_DATA = [
                         link: "https://www.instagram.com/vcbofficiel/reels/"
                     },
                 ]
-            },
-            {
-                type: 'text',
-                title: 'Outils et Processus',
-                text: 'DaVinci Resolve (montage vidéo), photographie sportive, Canva & Adobe Suite, planification éditoriale, analyse des performances et adaptation des formats selon les résultats.'
             }
         ]
     },
