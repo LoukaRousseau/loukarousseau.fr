@@ -142,12 +142,54 @@ export const PROJECTS_DATA = [
                 type: 'gallery',
                 title: 'Applications',
                 images: [
-                    { src: "GAME-DAY-AFFICHE.webp", alt: "Exemple post Instagram basket", link: "https://youtube.com" },
-                    { src: "PHOTO-JOUEUR.webp", alt: "Exemple de série de photo", link: "https://lien-vers-realisation2.com" },
-                    { src: "LIVRET-ACCUEIL.webp", alt: "Exemple de livret d'accueil support PRINT", link: "https://lien-vers-realisation3.com" },
-                    { src: "VIDEO-CDF.webp", alt: "Exemple de vidéo format horizontal", link: "https://lien-vers-realisation4.com" },
-                    { src: "LIVRET-PARTENAIRE.webp", alt: "Exemple de plaquette partenaire support PRINT", link: "https://lien-vers-realisation5.com" },
-                    { src: "MONTAGE.webp", alt: "Exemple de montage", link: "https://lien-vers-realisation6.com" },
+                    {
+                        src: "GAME-DAY-AFFICHE.webp",
+                        alt: "Exemple post Instagram basket",
+                        title: 'Exemple de post',
+                        tools: ['Affinity', 'Lightroom Classic'],
+                        description: 'Conception d\'une identité visuel pour le club',  
+                        link: "https://drive.google.com/drive/folders/14z5iPEgy2IBjFHtu5tXc08p_cyMldc2y?usp=sharing"
+                    },
+                    {
+                        src: "PHOTO-JOUEUR.webp",
+                        alt: "Exemple de série de photo",
+                        title: 'Série de photo',
+                        tools: ['Lightroom Classic', 'Affinity'],
+                        description: 'Série de photo pour les Espoirs de Challans',  
+                        link: "https://drive.google.com/drive/folders/136IhQNDaX2ekpRa8W7VMyzhMfB6of3x1?usp=sharing"
+                    },
+                    {
+                        src: "LIVRET-ACCUEIL.webp",
+                        alt: "Exemple de livret d'accueil support PRINT",
+                        title: 'Livret d\'accueil',
+                        tools: ['Affinity'],
+                        description: 'Réalisation livret d\'accueil pour l\'arrivée des joueurs',  
+                        link: "https://www.flipbookpdf.net/web/site/c5dcb3c6ec235db2bc3994da8e9a717a42658e0a202602.pdf.html#page/1"
+                    },
+                    {
+                        src: "VIDEO-CDF.webp",
+                        alt: "Exemple de vidéo format horizontal",
+                        title: 'Vidéo horizontale',
+                        tools: ['Davinci Resolve', 'Trello'],
+                        description: 'Écriture, tournage et réalisation d\'une vidéo vidéo de présentation du CDF',  
+                        link: "https://www.youtube.com/watch?v=9g71bYCV3U4"
+                    },
+                    {
+                        src: "LIVRET-PARTENAIRE.webp",
+                        alt: "Exemple de plaquette partenaire support PRINT",
+                        title: 'Plaquette partenaire',
+                        tools: ['Affinity'],
+                        description: 'Conception et réalisation d\'une plaquette partenaire pour pouvoir démarcher les partenaires',  
+                        link: "https://www.flipbookpdf.net/web/site/911f8f6c979a9d7d10ea5255971ed1a3af26061b202602.pdf.html#page/1"
+                    },
+                    {
+                        src: "MONTAGE.webp",
+                        alt: "Exemple de montage",
+                        title: 'Vidéo vertical',
+                        tools: ['Davinci Resolve'],
+                        description: 'Mise en place d\'une stratégie visant à redynamiser en explorant le format vertical',  
+                        link: "https://www.instagram.com/vcbofficiel/reels/"
+                    },
                 ]
             },
             {
