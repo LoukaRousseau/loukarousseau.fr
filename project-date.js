@@ -156,11 +156,6 @@ export const PROJECTS_DATA = [
                         link: "https://drive.google.com/drive/folders/1ZnGRIg9QMNr3viTzFc9b4wlEfEGggqDi?usp=sharing"
                     },
                 ]
-            },
-            {
-                type: 'text',
-                title: 'Outils et Processus',
-                text: 'Figma (UX/UI), Adobe Creative Suite (Illustrator, Photoshop), développement web (HTML, CSS, JS / WordPress selon ton stack), méthodologie de projet agile et logique orientée utilisateur.'
             }
         ]
     },
