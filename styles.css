@@ -1911,7 +1911,7 @@ body.modal-open {
 }
 
 .gallery-item {
-    background: #222;
+    background: #111111;
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid #333;

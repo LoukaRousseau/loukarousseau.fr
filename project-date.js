@@ -59,7 +59,7 @@ export const PROJECTS_DATA = [
         id: 'chad-communication-360',
         title: 'CHAD – Stratégie 360° & Refonte Web',
         category: 'COMMUNICATION',
-        shortDescription: 'Projet de fin d’étude réalisé pour Le Quarante (Conservatoire de Laval) afin de répondre à une baisse d’inscriptions à la Classe à Horaires Aménagés Danse à travers une stratégie de communication 360° et la création d’un site web dédié.',
+        shortDescription: 'Projet de fin d’étude réalisé en groupe de 4 sur une période de 6 mois pour Le Quarante (Conservatoire de Laval) afin de répondre à une baisse d’inscriptions à la Classe à Horaires Aménagés Danse à travers une stratégie de communication 360° et la création d’un site web dédié.',
         tags: ['Stratégie 360°', 'UX/UI', 'Développement Web', 'Branding', 'Communication'],
 
         content: [
@@ -82,19 +82,79 @@ export const PROJECTS_DATA = [
                 type: 'stats',
                 title: 'Dispositif 360°',
                 stats: [
-                    { label: 'Audit & Benchmark', value: 'Analyse complète', icon: '🔍' },
-                    { label: 'Stratégie éditoriale', value: 'Plan d’action', icon: '🧠' },
-                    { label: 'Maquettes UX/UI', value: 'Figma', icon: '🎨' },
-                    { label: 'Site développé', value: 'Responsive', icon: '💻' }
-                ]
+                    { 
+                        label: 'Audit du site web et des réseaux sociaux, étude concurrentielle', 
+                        value: 'Analyse de l’existant', 
+                        icon: '🔍' 
+                    },
+                    { 
+                        label: 'Définition des cibles, des canaux et des supports, stratégie éditoriale et de communication', 
+                        value: 'Plan d’action', 
+                        icon: '🧠' 
+                    },
+                    { 
+                        label: 'Création de templates pour les différents canaux de communication (réseaux, vidéo, posts, newsletter, print…)', 
+                        value: 'Templates prêts à l’emploi', 
+                        icon: '🎨' 
+                    },
+                    { 
+                        label: 'Création de wireframes, prototypes interactifs et intégration WordPress', 
+                        value: 'Création de site web', 
+                        icon: '💻' 
+                    }                ]
             },
             {
                 type: 'gallery',
                 title: 'Livrables',
                 images: [
-                    { src: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600', alt: 'Maquette UI' },
-                    { src: 'https://images.unsplash.com/photo-1529336953121-a0ce75aafac3?w=600', alt: 'Identité visuelle' },
-                    { src: 'https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=600', alt: 'Site responsive' }
+                    {
+                        src: "CHAD-CHARTE-GRAPHIQUE.webp",
+                        alt: "Première page charte graphique",
+                        title: 'Charte graphique',
+                        tools: ['Affinity', 'Lightroom Classic'],
+                        description: 'Création d\'une charte graphique clair',  
+                        link: "https://drive.google.com/file/d/1KKvXNE3NtJvJDAvxHLJxtdTe2NR4NcnK/view?usp=sharing"
+                    },
+                    {
+                        src: "CHAD-PORTES-OUVERTES.webp",
+                        alt: "Premiere page maquette",
+                        title: 'Affiche porte ouverte',
+                        tools: ['Affinity'],
+                        description: 'Réalisation d’affiches pour les différentes portes ouvertes',  
+                        link: "https://drive.google.com/drive/folders/1qhgjo6GNsAHnOkE-T8uDmucWPw-qrale?usp=sharing"
+                    },
+                    {
+                        src: "CHAD-TEMPLATES.webp",
+                        alt: "Mockups et Templates",
+                        title: 'Mockups et Templates',
+                        tools: ['Affinity', 'Lightroom Classic'],
+                        description: ' Création de différents mockups ainsi que de templates pour le conservatoire, afin de reprendre la main suite à notre projet',  
+                        link: "https://drive.google.com/drive/folders/1ZnGRIg9QMNr3viTzFc9b4wlEfEGggqDi?usp=sharing"
+                    },
+                    {
+                        src: "CHAD-CHARTE-GRAPHIQUE.webp",
+                        alt: "Première page charte graphique",
+                        title: 'Charte graphique',
+                        tools: ['Affinity', 'Lightroom Classic'],
+                        description: 'Création d\'une charte graphique clair',  
+                        link: "https://drive.google.com/file/d/1KKvXNE3NtJvJDAvxHLJxtdTe2NR4NcnK/view?usp=sharing"
+                    },
+                    {
+                        src: "CHAD-PORTES-OUVERTES.webp",
+                        alt: "Premiere page maquette",
+                        title: 'Affiche porte ouverte',
+                        tools: ['Affinity'],
+                        description: 'Réalisation d’affiches pour les différentes portes ouvertes',  
+                        link: "https://drive.google.com/drive/folders/1qhgjo6GNsAHnOkE-T8uDmucWPw-qrale?usp=sharing"
+                    },
+                    {
+                        src: "CHAD-TEMPLATES.webp",
+                        alt: "Mockups et Templates",
+                        title: 'Mockups et Templates',
+                        tools: ['Affinity', 'Lightroom Classic'],
+                        description: ' Création de différents mockups ainsi que de templates pour le conservatoire, afin de reprendre la main suite à notre projet',  
+                        link: "https://drive.google.com/drive/folders/1ZnGRIg9QMNr3viTzFc9b4wlEfEGggqDi?usp=sharing"
+                    },
                 ]
             },
             {
