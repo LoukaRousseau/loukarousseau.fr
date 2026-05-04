@@ -131,30 +131,6 @@ export const PROJECTS_DATA = [
                         description: ' Création de différents mockups ainsi que de templates pour le conservatoire, afin de reprendre la main suite à notre projet',  
                         link: "https://drive.google.com/drive/folders/1ZnGRIg9QMNr3viTzFc9b4wlEfEGggqDi?usp=sharing"
                     },
-                    {
-                        src: "CHAD-CHARTE-GRAPHIQUE.webp",
-                        alt: "Première page charte graphique",
-                        title: 'Charte graphique',
-                        tools: ['Affinity', 'Lightroom Classic'],
-                        description: 'Création d\'une charte graphique clair',  
-                        link: "https://drive.google.com/file/d/1KKvXNE3NtJvJDAvxHLJxtdTe2NR4NcnK/view?usp=sharing"
-                    },
-                    {
-                        src: "CHAD-PORTES-OUVERTES.webp",
-                        alt: "Premiere page maquette",
-                        title: 'Affiche porte ouverte',
-                        tools: ['Affinity'],
-                        description: 'Réalisation d’affiches pour les différentes portes ouvertes',  
-                        link: "https://drive.google.com/drive/folders/1qhgjo6GNsAHnOkE-T8uDmucWPw-qrale?usp=sharing"
-                    },
-                    {
-                        src: "CHAD-TEMPLATES.webp",
-                        alt: "Mockups et Templates",
-                        title: 'Mockups et Templates',
-                        tools: ['Affinity', 'Lightroom Classic'],
-                        description: ' Création de différents mockups ainsi que de templates pour le conservatoire, afin de reprendre la main suite à notre projet',  
-                        link: "https://drive.google.com/drive/folders/1ZnGRIg9QMNr3viTzFc9b4wlEfEGggqDi?usp=sharing"
-                    },
                 ]
             }
         ]
