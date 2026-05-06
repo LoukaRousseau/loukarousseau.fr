@@ -5,55 +5,53 @@
 
 export const PROJECTS_DATA = [
     {
-        id: 'site-evenementiel',
-        title: 'Site Événementiel',
-        category: 'WEB',
-        shortDescription: 'Conception et développement d\'un site web événementiel immersif avec animations avancées et expérience utilisateur optimisée.',
-        tags: ['Web Design', 'Développement', 'Animation'],
-
-        // Sections de contenu (ordre d'affichage)
+        id: 'open-blast-rotterdam',
+        title: 'Open Blast Rotterdam',
+        category: 'PHOTO',
+        shortDescription: 'Couverture photographique de l\'Open Blast Rotterdam, compétition internationale de Counter Strike 2.',
+        tags: ['Photographie Sportive', 'Événementiel', 'Lightroom'],
+    
         content: [
             {
                 type: 'text',
-                title: 'Contexte du Projet',
-                text: 'Création d\'un site web pour un événement sportif majeur. L\'objectif était de créer une expérience immersive permettant aux visiteurs de découvrir l\'événement, les participants et de réserver leurs places en ligne.'
+                title: 'Contexte',
+                text: 'Prise de photos lors des BLAST Open Rotterdam, un événement majeur de la scène Counter-Strike devant plus de 15 000 personnes présentes sur place. J’ai capturé les moments forts, l’ambiance et les joueurs.'
             },
             {
                 type: 'stats',
-                title: 'Résultats',
+                title: 'En chiffres',
                 stats: [
-                    { label: 'Visiteurs uniques', value: '15K+', icon: '👥' },
-                    { label: 'Taux de conversion', value: '34%', icon: '📈' },
-                    { label: 'Temps moyen', value: '4min 30s', icon: '⏱️' },
-                    { label: 'Score Performance', value: '98/100', icon: '⚡' }
+                    { label: 'Photos prises sur l\'événement', value: '600+', icon: '📸' },
+                    { label: 'Athlètes internationaux couverts', value: '40+', icon: '🏋️' },
+                    { label: 'Photos sélectionnées et retouchées', value: '80', icon: '✅' },
+                    { label: 'Accréditation presse officielle', value: 'OUI', icon: '🎫' }
                 ]
             },
             {
-                type: 'text',
-                title: 'Défi Technique',
-                text: 'Intégration d\'animations complexes tout en maintenant d\'excellentes performances. Utilisation de GSAP et optimisation des assets pour garantir une expérience fluide sur tous les appareils.'
-            },
-            {
-                type: 'big-image',
-                src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200',
-                alt: 'Interface du site événementiel'
-            },
-            {
-                type: 'gallery',
-                title: 'Captures d\'écran',
-                images: [
-                    { src: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=600', alt: 'Vue mobile' },
-                    { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600', alt: 'Dashboard' },
-                    { src: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600', alt: 'Analytics' }
+                type: 'photo-gallery',   // ← nouveau type dédié
+                title: 'Galerie – Open Blast Rotterdam',
+                photos: [
+                    { src: './ROTTERDAM/APEX-1.webp', alt: '', category: 'Action' },
+                    { src: './ROTTERDAM/CND-KRL-2.webp', alt: '', category: 'Ambiance' },
+                    { src: './ROTTERDAM/MEZII.webp', alt: '', category: 'Portrait' },
+                    { src: './ROTTERDAM/Navi.webp', alt: '', category: 'Ambiance' },
+                    { src: './ROTTERDAM/Speaker.webp', alt: '', category: 'Ambiance' },
+                    { src: './ROTTERDAM/KRL-1.webp', alt: '', category: 'Portrait' },
+                    { src: './ROTTERDAM/VITA-NAVI.webp', alt: '', category: 'Action' },
+                    { src: './ROTTERDAM/Zywoo-1.webp', alt: '', category: 'Ambiance' },
+                    { src: './ROTTERDAM/XQTZZZ.webp', alt: '', category: 'Portrait' },
+                    { src: './ROTTERDAM/APEX-KRL-CND.webp', alt: '', category: 'Action' },
+                    { src: './ROTTERDAM/TCHECK.webp', alt: '', category: 'Ambiance' },
+                    { src: './ROTTERDAM/CND-KRL.webp', alt: '', category: 'Ambiance' },
+                    { src: './ROTTERDAM/TROPHY-SCENE.webp', alt: '', category: 'Ambiance' },
+                    { src: './ROTTERDAM/VITA.webp', alt: '', category: 'Ambiance' },
+                    { src: './ROTTERDAM/CROWD.webp', alt: '', category: 'Action' },
                 ]
-            },
-            {
-                type: 'text',
-                title: 'Technologies Utilisées',
-                text: 'HTML5, CSS3, JavaScript ES6+, GSAP, Webpack, Responsive Design, Optimisation SEO'
+                
             }
         ]
     },
+
 
     {
         id: 'chad-communication-360',

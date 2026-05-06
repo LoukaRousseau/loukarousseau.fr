@@ -824,6 +824,8 @@ function renderSection(section) {
             return renderGallerySection(section);
         case 'big-image':
             return renderBigImageSection(section);
+        case 'photo-gallery':
+            return renderPhotoGallerySection(section);
         default:
             return '';
     }
@@ -873,7 +875,7 @@ const SOFTWARE_ICONS = {
             </linearGradient>
         </defs>
         <path fill="url(#silverDavinciResolve)" d="M17.621 0 5.977.004c-1.37 0-2.756.345-3.762 1.11a4.925 4.925 0 0 0-1.61 2.003C.233 3.93 0 5.02 0 5.951l.012 12.2c.002 1.604.479 3.057 1.461 4.112.984 1.056 2.462 1.683 4.331 1.691L16.856 24c1.26.005 3.095-.036 4.303-.714 1.075-.605 2.025-1.556 2.497-2.984.278-.84.345-2.084.344-3.147l-.021-11.13c-.002-.888-.15-2.023-.547-2.934-.425-.976-1.181-1.815-2.322-2.425C20.353.26 19.123 0 17.622 0zm0 .93c1.378 0 2.538.295 3.04.565.977.523 1.544 1.166 1.889 1.96.315.721.47 1.793.473 2.572l.018 11.13c.002 1.013-.097 2.257-.298 2.86-.396 1.202-1.146 1.946-2.063 2.462-.814.457-2.612.593-3.82.588l-11.05-.044c-1.657-.007-2.832-.534-3.626-1.386-.792-.851-1.212-2.06-1.212-3.485L.999 5.95c0-.829.196-1.827.474-2.437.345-.757.75-1.207 1.365-1.674C3.585 1.27 4.868.97 6.08.97zm-5.66 3.423c-1.976.089-3.204 1.658-3.214 3.29.019 1.443 1.635 3.481 2.884 4.53.12.099.154.109.33.18.062.025.198-.047.327-.135.36-.245.993-.947 1.648-1.738a7.67 7.67 0 0 0 1.031-1.683c.409-.89.261-1.599.235-1.888a3.983 3.983 0 0 0-.99-1.692 3.36 3.36 0 0 0-2.251-.864zm4.172 7.922a10.185 10.185 0 0 0-3.244.61c-.15.058-.26.1-.374.17-.057.036-.11.135-.105.292.017.433.29 1.278.624 2.27.384 1.135 1.066 2.27 1.844 2.74a3.23 3.23 0 0 0 2.53.342c.832-.243 1.595-.868 1.962-1.546.986-1.818.19-3.548-1.121-4.417-.447-.296-1.133-.445-1.89-.46-.074 0-.15-.002-.226-.001zm-8.432.038a6.201 6.201 0 0 0-.752.047c-.596.078-.932.273-1.29.51a3.177 3.177 0 0 0-1.365 1.979c-.075.552-.086 1.053.033 1.507.433 1.389 1.326 2.222 2.847 2.452.636.028 1.37-.063 1.99-.45 1.269-.782 2.08-3.17 2.412-4.742.053-.176.035-.357-.013-.42-.005-.067-.044-.113-.19-.183-.398-.192-1.32-.417-2.375-.6a7.68 7.68 0 0 0-1.297-.1z"/>
-    </svg>`,    
+    </svg>`,
     'Trello': `<svg viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
         <defs>
             <linearGradient id="silverGradientTrello" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -885,8 +887,8 @@ const SOFTWARE_ICONS = {
     <g fill="url(#silverGradientTrello)">
         <path d="M16.5 15.833c0 0.365-0.302 0.667-0.667 0.667h-14.666c-0.364 0-0.667-0.302-0.667-0.667v-14.666c0-0.365 0.302-0.667 0.667-0.667h14.667c0.364 0 0.667 0.302 0.667 0.667v14.666zM7.833 2.5c0-0.188-0.146-0.333-0.333-0.333h-5c-0.188 0-0.333 0.146-0.333 0.333v10.667c0 0.187 0.146 0.333 0.333 0.333h5c0.188 0 0.333-0.146 0.333-0.333v-10.667zM14.833 2.5c0-0.188-0.146-0.333-0.333-0.333h-5c-0.188 0-0.333 0.146-0.333 0.333v6.667c0 0.187 0.145 0.333 0.333 0.333h5c0.188 0 0.333-0.146 0.333-0.333v-6.667z"/>
     </g>
-</svg>`, 
-'Lightroom Classic': `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+</svg>`,
+    'Lightroom Classic': `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
     <defs>
         <linearGradient id="silverGradientLightroom" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" style="stop-color:#e0e0e0" />
@@ -941,6 +943,105 @@ function renderGallerySection(section) {
             </div>
         </div>
     `;
+}
+
+function renderPhotoGallerySection(section) {
+    const categories = ['Tout', ...new Set(section.photos.map(function (p) { return p.category; }))];
+
+    const filtersHtml = categories.map(function (cat, i) {
+        return '<button class="photo-filter-btn ' + (i === 0 ? 'active' : '') + '" data-filter="' + cat + '">' + cat + '</button>';
+    }).join('');
+
+    const photosHtml = section.photos.map(function (photo, index) {
+        return '<div class="photo-item" data-category="' + photo.category + '" data-index="' + index + '">' +
+            '<img src="' + photo.src + '" alt="' + photo.alt + '" loading="lazy">' +
+            '<div class="photo-overlay">' +
+            '<span class="photo-caption">' + photo.alt + '</span>' +
+            '</div>' +
+            '</div>';
+    }).join('');
+
+    return '<div class="content-section section-photo-gallery">' +
+        '<h3>' + section.title + '</h3>' +
+        '<div class="photo-filters">' + filtersHtml + '</div>' +
+        '<div class="photo-masonry">' + photosHtml + '</div>' +
+        '</div>' +
+        '<div class="photo-lightbox" id="photo-lightbox" style="display:none;">' +
+        '<button class="lightbox-close">X</button>' +
+        '<button class="lightbox-prev">&#8249;</button>' +
+        '<button class="lightbox-next">&#8250;</button>' +
+        '<div class="lightbox-img-wrapper">' +
+        '<img class="lightbox-img" src="" alt="">' +
+        '<p class="lightbox-caption"></p>' +
+        '</div>' +
+        '<div class="lightbox-counter"></div>' +
+        '</div>';
+}
+
+function initPhotoGallery(photos) {
+    var lightbox = document.getElementById('photo-lightbox');
+    if (!lightbox) return;
+
+    var currentIndex = 0;
+    var items = document.querySelectorAll('.photo-item');
+
+    function openLightbox(index) {
+        currentIndex = index;
+        var photo = photos[index];
+        lightbox.querySelector('.lightbox-img').src = photo.src;
+        lightbox.querySelector('.lightbox-img').alt = photo.alt;
+        lightbox.querySelector('.lightbox-caption').textContent = photo.alt;
+        lightbox.querySelector('.lightbox-counter').textContent = (index + 1) + ' / ' + photos.length;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    items.forEach(function (item, i) {
+        item.addEventListener('click', function () { openLightbox(i); });
+    });
+
+    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+
+    lightbox.querySelector('.lightbox-prev').addEventListener('click', function () {
+        openLightbox((currentIndex - 1 + photos.length) % photos.length);
+    });
+
+    lightbox.querySelector('.lightbox-next').addEventListener('click', function () {
+        openLightbox((currentIndex + 1) % photos.length);
+    });
+
+    lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (lightbox.style.display === 'flex') {
+            if (e.key === 'ArrowRight') openLightbox((currentIndex + 1) % photos.length);
+            if (e.key === 'ArrowLeft') openLightbox((currentIndex - 1 + photos.length) % photos.length);
+            if (e.key === 'Escape') closeLightbox();
+        }
+    });
+
+    document.querySelectorAll('.photo-filter-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            document.querySelectorAll('.photo-filter-btn').forEach(function (b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+            var filter = btn.dataset.filter;
+            document.querySelectorAll('.photo-item').forEach(function (item) {
+                var show = filter === 'Tout' || item.dataset.category === filter;
+                item.style.opacity = show ? '1' : '0';
+                item.style.transform = show ? 'scale(1)' : 'scale(0.95)';
+                item.style.pointerEvents = show ? 'auto' : 'none';
+            });
+        });
+    });
 }
 
 // Section grande image
