@@ -71,6 +71,21 @@ body {
     border-bottom: 1px solid #4821c662;
 }
 
+.nav-cv-btn {
+    border: 1.5px solid currentColor;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-cv-btn:hover {
+    background: white;
+    color: black;
+}
+
+
+
 .nav-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -1524,6 +1539,15 @@ body.modal-open {
     }
 }
 
+.cta-cv-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .cta-cv-mobile {
+        display: inline-flex;
+    }
+}
 /* ============================================================
    16. RESPONSIVE — Mobile (≤ 768px)
    ============================================================ */
