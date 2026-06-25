@@ -948,9 +948,7 @@ function renderGallerySection(section) {
 function renderPhotoGallerySection(section) {
     const categories = ['Tout', ...new Set(section.photos.map(function (p) { return p.category; }))];
 
-    const filtersHtml = categories.map(function (cat, i) {
-        return '<button class="photo-filter-btn ' + (i === 0 ? 'active' : '') + '" data-filter="' + cat + '">' + cat + '</button>';
-    }).join('');
+    const filtersHtml = '';
 
     const photosHtml = section.photos.map(function (photo, index) {
         return '<div class="photo-item" data-category="' + photo.category + '" data-index="' + index + '">' +
@@ -1025,22 +1023,6 @@ function initPhotoGallery(photos) {
             if (e.key === 'ArrowLeft') openLightbox((currentIndex - 1 + photos.length) % photos.length);
             if (e.key === 'Escape') closeLightbox();
         }
-    });
-
-    document.querySelectorAll('.photo-filter-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            document.querySelectorAll('.photo-filter-btn').forEach(function (b) {
-                b.classList.remove('active');
-            });
-            btn.classList.add('active');
-            var filter = btn.dataset.filter;
-            document.querySelectorAll('.photo-item').forEach(function (item) {
-                var show = filter === 'Tout' || item.dataset.category === filter;
-                item.style.opacity = show ? '1' : '0';
-                item.style.transform = show ? 'scale(1)' : 'scale(0.95)';
-                item.style.pointerEvents = show ? 'auto' : 'none';
-            });
-        });
     });
 }
 

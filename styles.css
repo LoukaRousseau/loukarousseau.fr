@@ -421,11 +421,11 @@ body {
 /* ============================================================
    8. TIMELINE PARCOURS
    ============================================================ */
-.timeline-section {
-    min-height: 100vh;
+   .timeline-section {
+    min-height: auto;
     background: var(--color-bg);
-    overflow: hidden;
-    padding-bottom: 300px;
+    overflow: visible;
+    padding: 4rem 0;
 }
 
 .timeline-section::before {
@@ -439,13 +439,13 @@ body {
 
 .timeline-container {
     max-width: 1400px;
-    margin: 30vh auto 0;
+    margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
 
 .timeline-wrapper {
     position: relative;
-    padding: var(--spacing-xl) 0;
+    padding: 600px 0;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -547,7 +547,9 @@ body {
 /* Cartes */
 .timeline-card {
     position: absolute;
-    width: 600px;
+    width: 325px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
     background: var(--color-bg-secondary);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -575,7 +577,7 @@ body {
 
 .timeline-item.visible .timeline-card {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
 }
 
 .timeline-card-top {
@@ -583,7 +585,7 @@ body {
 }
 
 .timeline-card-top:hover {
-    transform: translateY(-10px);
+    transform: translateX(-50%) translateY(-10px);
 }
 
 .timeline-card-bottom {
@@ -591,7 +593,7 @@ body {
 }
 
 .timeline-card-bottom:hover {
-    transform: translateY(5px);
+    transform: translateX(-50%) translateY(5px);
 }
 
 .timeline-card-active {
@@ -1509,7 +1511,9 @@ body.modal-open {
 
     /* Timeline tablette */
     .timeline-card {
-        width: 280px;
+        width: 250px;
+        left: 50%;
+        transform: translateX(0%) translateY(20px);
     }
 
     .card-year {
@@ -1520,10 +1524,6 @@ body.modal-open {
         font-size: 1.5rem;
     }
 
-    .timeline-section {
-        padding-top: 80vh;
-        padding-bottom: 70vh;
-    }
 
     .timeline-container {
         margin-top: 0;
@@ -1649,17 +1649,31 @@ body.modal-open {
         height: 10px;
     }
 
+
     .timeline-card {
         position: static;
         width: 100%;
-        margin-left: var(--spacing-md);
-        opacity: 1;
+        left: auto;
         transform: none;
+        opacity: 1;
+        margin-left: var(--spacing-md);
     }
-
+    
     .timeline-card-top,
     .timeline-card-bottom {
         position: static;
+        bottom: auto;
+        top: auto;
+    }
+    
+    .timeline-card-top:hover,
+    .timeline-card-bottom:hover {
+        transform: none;
+    }
+    
+    .timeline-item.visible .timeline-card {
+        transform: none;
+        opacity: 1;
     }
 
     /* Projets */

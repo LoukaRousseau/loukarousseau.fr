@@ -1,6 +1,5 @@
 /* ========================================
    DONNÉES DES PROJETS - PORTFOLIO
-   Structure externe pour garder le HTML propre
    ======================================== */
 
 export const PROJECTS_DATA = [
@@ -10,7 +9,7 @@ export const PROJECTS_DATA = [
         category: 'PHOTO',
         shortDescription: 'Couverture photographique de l\'Open Blast Rotterdam, compétition internationale de Counter Strike 2.',
         tags: ['Photographie Sportive', 'Événementiel', 'Lightroom'],
-    
+
         content: [
             {
                 type: 'text',
@@ -22,8 +21,8 @@ export const PROJECTS_DATA = [
                 title: 'En chiffres',
                 stats: [
                     { label: 'Photos prises sur l\'événement', value: '600+', icon: '📸' },
-                    { label: 'Athlètes internationaux couverts', value: '40+', icon: '🏋️' },
-                    { label: 'Photos sélectionnées et retouchées', value: '80', icon: '✅' },
+                    { label: 'Athlètes internationaux couverts', value: '30+', icon: '🏋️' },
+                    { label: 'Photos sélectionnées et retouchées', value: '50', icon: '✅' },
                     { label: 'Accréditation presse officielle', value: 'OUI', icon: '🎫' }
                 ]
             },
@@ -47,7 +46,12 @@ export const PROJECTS_DATA = [
                     { src: 'VITA.webp', alt: '', category: 'Ambiance' },
                     { src: 'CROWD.webp', alt: '', category: 'Action' },
                 ]
-                
+
+            },
+            {
+                type: 'text',
+                title: 'Compétences mobilisées',
+                text: 'Photographie événementielle, Gestion du terrain sous contrainte de temps, Cadrage et sélection, Retouche Lightroom'
             }
         ]
     },
@@ -80,26 +84,26 @@ export const PROJECTS_DATA = [
                 type: 'stats',
                 title: 'Dispositif 360°',
                 stats: [
-                    { 
-                        label: 'Audit du site web et des réseaux sociaux, étude concurrentielle', 
-                        value: 'Analyse de l’existant', 
-                        icon: '🔍' 
+                    {
+                        label: 'Audit du site web et des réseaux sociaux, étude concurrentielle',
+                        value: 'Analyse de l’existant',
+                        icon: '🔍'
                     },
-                    { 
-                        label: 'Définition des cibles, des canaux et des supports, stratégie éditoriale et de communication', 
-                        value: 'Plan d’action', 
-                        icon: '🧠' 
+                    {
+                        label: 'Définition des cibles, des canaux et des supports, stratégie éditoriale et de communication',
+                        value: 'Plan d’action',
+                        icon: '🧠'
                     },
-                    { 
-                        label: 'Création de templates pour les différents canaux de communication (réseaux, vidéo, posts, newsletter, print…)', 
-                        value: 'Templates prêts à l’emploi', 
-                        icon: '🎨' 
+                    {
+                        label: 'Création de templates pour les différents canaux de communication (réseaux, vidéo, posts, newsletter, print…)',
+                        value: 'Templates prêts à l’emploi',
+                        icon: '🎨'
                     },
-                    { 
-                        label: 'Création de wireframes, prototypes interactifs et intégration WordPress', 
-                        value: 'Création de site web', 
-                        icon: '💻' 
-                    }                ]
+                    {
+                        label: 'Création de wireframes, prototypes interactifs et intégration WordPress',
+                        value: 'Création de site web',
+                        icon: '💻'
+                    }]
             },
             {
                 type: 'gallery',
@@ -110,7 +114,7 @@ export const PROJECTS_DATA = [
                         alt: "Première page charte graphique",
                         title: 'Charte graphique',
                         tools: ['Affinity', 'Lightroom Classic'],
-                        description: 'Création d\'une charte graphique clair',  
+                        description: 'Création d\'une charte graphique clair',
                         link: "https://drive.google.com/file/d/1KKvXNE3NtJvJDAvxHLJxtdTe2NR4NcnK/view?usp=sharing"
                     },
                     {
@@ -118,7 +122,7 @@ export const PROJECTS_DATA = [
                         alt: "Premiere page maquette",
                         title: 'Affiche porte ouverte',
                         tools: ['Affinity'],
-                        description: 'Réalisation d’affiches pour les différentes portes ouvertes',  
+                        description: 'Réalisation d’affiches pour les différentes portes ouvertes',
                         link: "https://drive.google.com/drive/folders/1qhgjo6GNsAHnOkE-T8uDmucWPw-qrale?usp=sharing"
                     },
                     {
@@ -126,11 +130,16 @@ export const PROJECTS_DATA = [
                         alt: "Mockups et Templates",
                         title: 'Mockups et Templates',
                         tools: ['Affinity', 'Lightroom Classic'],
-                        description: ' Création de différents mockups ainsi que de templates pour le conservatoire, afin de reprendre la main suite à notre projet',  
+                        description: ' Création de différents mockups ainsi que de templates pour le conservatoire, afin de reprendre la main suite à notre projet',
                         link: "https://drive.google.com/drive/folders/1ZnGRIg9QMNr3viTzFc9b4wlEfEGggqDi?usp=sharing"
                     },
                 ]
-            }
+            },
+            {
+                type: 'text',
+                title: 'Compétences mobilisées',
+                text: 'Stratégie de communication 360°, Audit et diagnostic de l\'existant, Branding et identité visuelle, UX/UI design (wireframes, prototypes), Développement WordPress, Travail en équipe sur 6 mois'
+            },
         ]
     },
 
@@ -149,7 +158,7 @@ export const PROJECTS_DATA = [
             },
             {
                 type: 'big-image',
-                src: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1200',
+                src: "Challans-elite2.webp",
                 alt: 'Couverture match basket'
             },
             {
@@ -158,15 +167,21 @@ export const PROJECTS_DATA = [
                 text: 'Définition et mise en œuvre de la stratégie social media, création de contenus photo/vidéo (matchs, coulisses, événements), gestion éditoriale des réseaux sociaux et valorisation des partenaires et actions du club (tournois, basket santé, baskin).'
             },
             {
+                type: 'text',
+                title: 'Méthode',
+                text: 'Diagnostic de l\'existant (communication réactive, peu si ce n\'est pas format long, aucun outil de suivi). Définition d\'une stratégie éditoriale en deux logiques complémentaires pour acquérir et retenir de l\'audience avec le snack content (TikTok, Reels Instagram, 3-4 publications/semaine) pour acquérir l\'audience, et slow content (YouTube, interviews, teaser institutionnel) pour fidéliser. Analyse mensuelle des performances via Meta Business Suite, TikTok Analytics et YouTube Studio. Reporting partenaires à chaque fin de saison.'
+            },
+            {
                 type: 'stats',
-                title: 'Actions Clés',
+                title: 'Résultats mesurés',
                 stats: [
-                    { label: 'Captation photos/vidéos, création de contenus Reels/stories, caméraman live', value: 'Couverture de plus de 60 matchs', icon: '🏀' },
-                    { label: 'Augmentation de 30% des impressions sur Instagram et Facebook', value: '+30%', icon: '📈' },
-                    { label: 'Livret d\'accueil, LEDs bord de terrain, vidéo verticale..', value: 'Nouveaux Formats développés', icon: '📱' },
-                    { label: 'Mise en place d\'un planning éditorial, stratégie social média, reporting dfe performance et analyse statistiques', value: 'Organisation stratégique', icon: '🎯' }
+                    { label: 'Abonnés YouTube en 2 ans (1 630 → 3 765)', value: '+131%', icon: '📈' },
+                    { label: 'Abonnés Instagram en 2 ans (6 224 → 10 225)', value: '+64%', icon: '📸' },
+                    { label: 'Vues totales TikTok sur la période', value: '565 900', icon: '🎵' },
+                    { label: 'Vues YouTube sur la période dont 73,1% de non-abonnés', value: '210 611', icon: '▶️' }
                 ]
             },
+
             {
                 type: 'gallery',
                 title: 'Applications',
@@ -176,7 +191,7 @@ export const PROJECTS_DATA = [
                         alt: "Exemple post Instagram basket",
                         title: 'Exemple de post',
                         tools: ['Affinity', 'Lightroom Classic'],
-                        description: 'Conception d\'une identité visuel pour le club',  
+                        description: 'Conception d\'une identité visuel pour le club',
                         link: "https://drive.google.com/drive/folders/14z5iPEgy2IBjFHtu5tXc08p_cyMldc2y?usp=sharing"
                     },
                     {
@@ -184,7 +199,7 @@ export const PROJECTS_DATA = [
                         alt: "Exemple de série de photo",
                         title: 'Série de photo',
                         tools: ['Lightroom Classic', 'Affinity'],
-                        description: 'Série de photo pour les Espoirs de Challans',  
+                        description: 'Série de photo pour les Espoirs de Challans',
                         link: "https://drive.google.com/drive/folders/136IhQNDaX2ekpRa8W7VMyzhMfB6of3x1?usp=sharing"
                     },
                     {
@@ -192,7 +207,7 @@ export const PROJECTS_DATA = [
                         alt: "Exemple de livret d'accueil support PRINT",
                         title: 'Livret d\'accueil',
                         tools: ['Affinity'],
-                        description: 'Réalisation livret d\'accueil pour l\'arrivée des joueurs',  
+                        description: 'Réalisation livret d\'accueil pour l\'arrivée des joueurs',
                         link: "https://www.flipbookpdf.net/web/site/c5dcb3c6ec235db2bc3994da8e9a717a42658e0a202602.pdf.html#page/1"
                     },
                     {
@@ -200,7 +215,7 @@ export const PROJECTS_DATA = [
                         alt: "Exemple de vidéo format horizontal",
                         title: 'Vidéo horizontale',
                         tools: ['Davinci Resolve', 'Trello'],
-                        description: 'Écriture, tournage et réalisation d\'une vidéo vidéo de présentation du CDF',  
+                        description: 'Écriture, tournage et réalisation d\'une vidéo vidéo de présentation du CDF',
                         link: "https://www.youtube.com/watch?v=9g71bYCV3U4"
                     },
                     {
@@ -208,7 +223,7 @@ export const PROJECTS_DATA = [
                         alt: "Exemple de plaquette partenaire support PRINT",
                         title: 'Plaquette partenaire',
                         tools: ['Affinity'],
-                        description: 'Conception et réalisation d\'une plaquette partenaire pour pouvoir démarcher les partenaires',  
+                        description: 'Conception et réalisation d\'une plaquette partenaire pour pouvoir démarcher les partenaires',
                         link: "https://www.flipbookpdf.net/web/site/911f8f6c979a9d7d10ea5255971ed1a3af26061b202602.pdf.html#page/1"
                     },
                     {
@@ -216,63 +231,22 @@ export const PROJECTS_DATA = [
                         alt: "Exemple de montage",
                         title: 'Vidéo vertical',
                         tools: ['Davinci Resolve'],
-                        description: 'Mise en place d\'une stratégie visant à redynamiser en explorant le format vertical',  
+                        description: 'Mise en place d\'une stratégie visant à redynamiser en explorant le format vertical',
                         link: "https://www.instagram.com/vcbofficiel/reels/"
                     },
+                    
                 ]
-            }
+                
+            },
+            {
+                type: 'text',
+                title: 'Compétences mobilisées',
+                text: 'Stratégie de contenu vidéo, production photo/vidéo (snack & slow content), analyse de données (Meta Business Suite, TikTok Analytics, YouTube Studio), motion design (LED, identité visuelle), gestion de projet avec équipe de bénévoles, reporting partenaires'
+            },
         ]
     },
 
-    {
-        id: 'app-mobile',
-        title: 'Refonte Application Mobile',
-        category: 'UX/UI',
-        shortDescription: 'Redesign complet d\'une application de suivi sportif avec focus sur l\'expérience utilisateur et l\'accessibilité.',
-        tags: ['UX Research', 'UI Design', 'Prototype'],
 
-        content: [
-            {
-                type: 'text',
-                title: 'Problématique',
-                text: 'Une application de suivi sportif existante souffrait d\'un taux d\'abandon élevé et de retours négatifs sur l\'ergonomie. Mission : repenser complètement l\'UX/UI.'
-            },
-            {
-                type: 'text',
-                title: 'Recherche UX',
-                text: 'Interviews utilisateurs (15 personnes), analyse des parcours, tests A/B, étude de la concurrence, création de personas et mapping des user journeys.'
-            },
-            {
-                type: 'stats',
-                title: 'Améliorations',
-                stats: [
-                    { label: 'Rétention J7', value: '+67%', icon: '📲' },
-                    { label: 'Taux complétion', value: '+89%', icon: '✅' },
-                    { label: 'NPS Score', value: '8.5/10', icon: '⭐' },
-                    { label: 'Temps de tâche', value: '-40%', icon: '⚡' }
-                ]
-            },
-            {
-                type: 'big-image',
-                src: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200',
-                alt: 'Maquettes UI'
-            },
-            {
-                type: 'gallery',
-                title: 'Écrans Clés',
-                images: [
-                    { src: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600', alt: 'Dashboard' },
-                    { src: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600', alt: 'Profil' },
-                    { src: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600', alt: 'Statistiques' }
-                ]
-            },
-            {
-                type: 'text',
-                title: 'Outils',
-                text: 'Figma (design & prototypage), Miro (workshops), Maze (tests utilisateurs), Optimal Workshop (card sorting), Adobe XD (animations)'
-            }
-        ]
-    }
 ];
 
 // Export pour utilisation dans le script principal
